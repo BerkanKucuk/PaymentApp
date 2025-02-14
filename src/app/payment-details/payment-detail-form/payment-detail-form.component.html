@@ -4,7 +4,7 @@
     <label>Card Owner Name</label>
     <input class="form-control form-control-lg" 
     placeholder="Name on Card" #cardOwnerName="ngModel" name="cardOwnerName"
-    [(ngModel)]="service.formData.cardOwnerName">
+    [(ngModel)]="service.formData.cardOwnerName" required>
 </div>
 <div class="mb-3">
     <label>Card Number</label>
@@ -20,7 +20,7 @@
   <div class="mb-3">
     <label>Valid Through</label>
     <input class="form-control form-control-lg" placeholder="MM/YY" #expirationDate="ngModel"
-      name="expirationDate" [(ngModel)]="service.formData.expirationDate" required minlength="16" maxlength="16">
+      name="expirationDate" [(ngModel)]="service.formData.expirationDate" required minlength="5" maxlength="5">
   </div>
   <div class="d-grid">
     <button class="btn btn-lg btn-success" type="submit">
