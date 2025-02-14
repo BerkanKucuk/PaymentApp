@@ -14,6 +14,13 @@ export class PaymentDetailFormComponent {
   constructor(public service : PaymentDetailService){
   
       }
+
+    restrictNumeric(event: KeyboardEvent) {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }
+    
   onSubmit(form : NgForm){
     if (form.valid){
       this.service.postPaymentDetail()
@@ -24,6 +31,8 @@ export class PaymentDetailFormComponent {
       },
       error: err => { console.log(err)}
     })
+    alert("Bilgileriniz başarıyla kaydedildi!.")
     }
+
   }    
 }

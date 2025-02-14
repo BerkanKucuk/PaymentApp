@@ -9,7 +9,7 @@
 <div class="mb-3">
     <label>Card Number</label>
     <input class="form-control form-control-lg" placeholder="16 Digit Card Number" #cardNumber="ngModel"
-      name="cardNumber" [(ngModel)]="service.formData.cardNumber" required minlength="16" maxlength="16">
+      name="cardNumber" [(ngModel)]="service.formData.cardNumber" pattern="\d*" (keypress)="restrictNumeric($event)" required minlength="16" maxlength="16">
   </div>
   <div class="mb-3 col-6">
     <label>Security Code</label>
