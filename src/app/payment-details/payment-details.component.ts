@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { PaymentDetailFormComponent } from "./payment-detail-form/payment-detail-form.component";
 import { PaymentDetailService } from '../shared/payment-detail.service';
 import { CommonModule } from '@angular/common';
+import { PaymentDetail } from '../shared/payment-detail.model';
 
 
 @Component({
@@ -16,5 +17,9 @@ export class PaymentDetailsComponent implements OnInit{
     }
   ngOnInit(): void {
     this.service.refreshList();
+  }
+
+  populateForm(selectedRecord : PaymentDetail){
+    this.service.formData = Object.assign({},selectedRecord);
   }
 }
